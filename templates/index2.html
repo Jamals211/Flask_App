@@ -1,0 +1,181 @@
+<html> 
+<body> 
+	<h3>Wine Quality Predictor</h3> 
+
+<div> 
+<form action="/predict" method="POST"> 
+	<br> 
+	<label for="color">Color</label> 
+	<select id="color" name="color"> 
+	<option value="0">Red Wine</option> 
+	<option value="1">White Wine</option> 
+	</select> 
+	<br> 
+	<label for="vintage">Vintage</label> 
+	<select id="vintage" name="vintage"> 
+    <option id='1992'>1992</option>
+    <option id='1993'>1993</option>
+    <option id='1994'>1994</option>
+    <option id='1995'>1995</option>
+    <option id='1996'>1996</option>
+    <option id='1997'>1997</option>
+    <option id='1998'>1998</option>
+    <option id='1999'>1999</option>
+    <option id='2000'>2000</option>
+    <option id='2001'>2001</option>
+    <option id='2002'>2002</option>
+    <option id='2003'>2003</option>
+    <option id='2004'>2004</option>
+    <option id='2005'>2005</option>
+    <option id='2006'>2006</option>
+    <option id='2007'>2007</option>
+    <option id='2008'>2008</option>
+    <option id='2009'>2009</option>
+    <option id='2010'>2010</option>
+    <option id='2011'>2011</option>
+    <option id='2012'>2012</option>
+    <option id='2013'>2013</option>
+    <option id='2014'>2014</option>
+    <option id='2015'>2015</option>
+    <option id='2016'>2016</option>
+    <option id='2017'>2017</option>
+	</select> 
+	<br> 
+	<label for="appellation">Appellation</label> 
+	<select id="appellation" name="appellation"> 
+    <option value="Alexander Valley">Alexander Valley</option>
+    <option value="Amador County">Amador County</option>
+    <option value="Anderson Valley">Anderson Valley</option>
+    <option value="3">Atlas Peak</option>
+    <option value="4">Bennett Valley</option>
+    <option value="5">Calistoga</option>
+    <option value="6">Carneros</option>
+    <option value="7">Chalk Hill</option>
+    <option value="8">Chehalem Mountains</option>
+    <option value="9">Columbia Valley</option>
+    <option value="10">Coombsville</option>
+    <option value="11">Diamond Mountain District</option>
+    <option value="12">Dry Creek Valley</option>
+    <option value="13">Dundee Hills</option>
+    <option value="14">Eola-Amity Hills</option>
+    <option value="15">Green Valley</option>
+    <option value="16">Horse Heaven Hills</option>
+    <option value="17">Howell Mountain</option>
+    <option value="18">Knights Valley</option>
+    <option value="19">Los Carneros</option>
+    <option value="20">Mendocino County</option>
+    <option value="21">Mendocino Ridge</option>
+    <option value="22">Monterey</option>
+    <option value="23">Mount Harlan</option>
+    <option value="24">Mount Veeder</option>
+    <option value="25">Napa County</option>
+    <option value="26">Napa Valley</option>
+    <option value="27">Oak Knoll District</option>
+    <option value="28">Oakville</option>
+    <option value="29">Paso Robles</option>
+    <option value="30">Red Mountain</option>
+    <option value="11">Ribbon Ridge</option>
+    <option value="32">Russian River Valley</option>
+    <option value="33">Rutherford</option>
+    <option value="34">Santa Cruz Mountains</option>
+    <option value="35">Santa Lucia Highlands</option>
+    <option value="36">Santa Ynez Valley</option>
+    <option value="37">Sierra Foothills</option>
+    <option value="38">Snipes Mountain</option>
+    <option value="39">Sonoma Coast</option>
+    <option value="40">Sonoma County</option>
+    <option value="41">Sonoma Mountain</option>
+    <option value="42">Sonoma Valley</option>
+    <option value="43">Spring Mountain District</option>
+    <option value="44">St Helena</option>
+    <option value="45">Sta Rita Hills</option>
+    <option value="46">Stags Leap District</option>
+    <option value="47">Walla Walla Valley</option>
+    <option value="48">Willamette Valley</option>
+    <option value="49">Yakima Valley</option>
+    <option value="50">Yountville</option> 
+	</select> 
+	<br> 
+	<label for="vineyards">Vineyards</label> 
+	<select id="vineyards" name="vineyards"> 
+    <option id='Abreu Vineyard'>Abreu Vineyard</option>
+    <option id='Alpha Omega'>Alpha Omega</option>
+    <option id='Andrew Will Winery'>Andrew Will Winery</option>
+    <option id='Araujo Estate'>Araujo Estate</option>
+    <option id='Barnett Vineyards'>Barnett Vineyards</option>
+    <option id='Beaulieu Vineyard Bv'>Beaulieu Vineyard Bv</option>
+    <option id='Beringer Vineyards'>Beringer Vineyards</option>
+    <option id='Betz Family Winery'>Betz Family Winery</option>
+    <option id='Bond Estates'>Bond Estates</option>
+    <option id='Bryant Family Vineyard'>Bryant Family Vineyard</option>
+    <option id='Cakebread Cellars'>Cakebread Cellars</option>
+    <option id='Carter Cellars'>Carter Cellars</option>
+    <option id='Caymus Vineyards'>Caymus Vineyards</option>
+    <option id='Cayuse Vineyards'>Cayuse Vineyards</option>
+    <option id='Chappellet'>Chappellet</option>
+    <option id='Chateau Montelena The Montelena Estate'>Chateau Montelena The Montelena Estate</option>
+    <option id='Cliff Lede Vineyards'>Cliff Lede Vineyards</option>
+    <option id='Colgin Cellars'>Colgin Cellars</option>
+    <option id='Corison'>Corison</option>
+    <option id='Dalla Valle Vineyards'>Dalla Valle Vineyards</option>
+    <option id='Delille Cellars'>Delille Cellars</option>
+    <option id='Diamond Creek'>Diamond Creek</option>
+    <option id='Domaine Serene'>Domaine Serene</option>
+    <option id='Dominus Estate'>Dominus Estate</option>
+    <option id='Duckhorn Vineyards'>Duckhorn Vineyards</option>
+    <option id='Duckhorn Vineyards Estate'>Duckhorn Vineyards Estate</option>
+    <option id='Dunn Vineyards'>Dunn Vineyards</option>
+    <option id='Etude'>Etude</option>
+    <option id='Favia'>Favia</option>
+    <option id='Flora Springs'>Flora Springs</option>
+    <option id='Forman Vineyard'>Forman Vineyard</option>
+    <option id='Freemark Abbey'>Freemark Abbey</option>
+    <option id='Gramercy Cellars'>Gramercy Cellars</option>
+    <option id='Grgich Hills Estate'>Grgich Hills Estate</option>
+    <option id='Harlan Estate'>Harlan Estate</option>
+    <option id='Hundred Acre'>Hundred Acre</option>
+    <option id='Joseph Phelps Vineyards'>Joseph Phelps Vineyards</option>
+    <option id='Kapcsandy Family Winery'>Kapcsandy Family Winery</option>
+    <option id='Kistler Vineyards'>Kistler Vineyards</option>
+    <option id='Kongsgaard'>Kongsgaard</option>
+    <option id="L' Ecole No. 41">L'Ecole No. 41</option>
+    <option id='La Jota Vineyard'>La Jota Vineyard</option>
+    <option id='Larkmead Vineyards'>Larkmead Vineyards</option>
+    <option id='Leonetti Cellar'>Leonetti Cellar</option>
+    <option id='Lokoya Winery'>Lokoya Winery</option>
+    <option id='Long Shadows'>Long Shadows</option>
+    <option id='Marcassin'>Marcassin</option>
+    <option id='Martinelli'>Martinelli</option>
+    <option id='Mayacamas Vineyards'>Mayacamas Vineyards</option>
+    <option id='Nickel & Nickel'>Nickel & Nickel</option>
+    <option id='Opus One'>Opus One</option>
+    <option id='Outpost'>Outpost</option>
+    <option id='Pahlmeyer'>Pahlmeyer</option>
+    <option id='Paul Hobbs'>Paul Hobbs</option>
+    <option id='Pepper Bridge Winery'>Pepper Bridge Winery</option>
+    <option id='Peter Michael Winery'>Peter Michael Winery</option>
+    <option id='Philip Togni Vineyard'>Philip Togni Vineyard</option>
+    <option id='Pine Ridge Vineyards'>Pine Ridge Vineyards</option>
+    <option id='Plumpjack Winery'>Plumpjack Winery</option>
+    <option id='Quilceda Creek'>Quilceda Creek</option>
+    <option id='Ramey Wine Cellars'>Ramey Wine Cellars</option>
+    <option id='Realm Cellars'>Realm Cellars</option>
+    <option id='Ridge Vineyards'>Ridge Vineyards</option>
+    <option id='Robert Craig Winery'>Robert Craig Winery</option>
+    <option id='Robert Foley Vineyards'>Robert Foley Vineyards</option>
+    <option id='Robert Mondavi Winery'>Robert Mondavi Winery</option>
+    <option id='Saintsbury'>Saintsbury</option>
+    <option id='Schrader Cellars'>Schrader Cellars</option>
+    <option id='Screaming Eagle'>Screaming Eagle</option>
+    <option id='Shafer Vineyards'>Shafer Vineyards</option>
+    <option id='Spottswoode'>Spottswoode</option>
+    <option id="Stag'S Leap Wine Cellars">Stag'S Leap Wine Cellars</option>
+    <option id='Verite'>Verite</option>
+    <option id='Other'>Other</option>
+    </select> 
+	<br> 
+	<input type="submit" value="Submit"> 
+</form> 
+</div> 
+</body> 
+</html> 
